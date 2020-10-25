@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <h1>ToDo</h1>
+    <AddTodo/>
     <TodoList v-bind:list="list" @removeItem="removeItem"/>
   </div>
 </template>
 
 <script>
 import TodoList from "@/components/TodoList";
+import AddTodo from "@/components/AddTodo";
 export default {
   name: 'App',
   data() {
@@ -31,7 +33,8 @@ export default {
     }
   },
   components: {
-    TodoList
+    TodoList,
+    AddTodo
   },
   methods: {
     removeItem(id) {
