@@ -36,6 +36,13 @@ export default {
     TodoList,
     AddTodo
   },
+  mounted() {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(json => {
+          this.list = json
+        })
+  },
   methods: {
     removeItem(id) {
       this.list = this.list.filter(l => l.id !== id)
